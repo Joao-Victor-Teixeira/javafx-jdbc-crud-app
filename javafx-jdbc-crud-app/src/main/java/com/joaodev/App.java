@@ -13,7 +13,7 @@ public class App extends Application {
     @Override 
     public void start(Stage primaryStage) { 
          try { 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/joaodev/gui/layout.fxml")); 
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/joaodev/gui/MainView.fxml")); 
             ScrollPane scrollPane = loader.load(); 
             
             scrollPane.setFitToHeight(true);
