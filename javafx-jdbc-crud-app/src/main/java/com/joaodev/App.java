@@ -9,34 +9,32 @@ import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 
 public class App extends Application {
+	
+	private static Scene mainScene;
+	
+	@Override
+	public void start(Stage primaryStage) {
+		try {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
+			ScrollPane scrollPane = loader.load();
+			
+			scrollPane.setFitToHeight(true);
+			scrollPane.setFitToWidth(true);
+			
+			mainScene = new Scene(scrollPane);
+			primaryStage.setScene(mainScene);
+			primaryStage.setTitle("Sample JavaFX application");
+			primaryStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
-    private static Scene mainScene;
-
-    @Override 
-    public void start(Stage primaryStage) { 
-         try { 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/joaodev/gui/MainView.fxml")); 
-            ScrollPane scrollPane = loader.load(); 
-            
-            scrollPane.setFitToHeight(true);
-            scrollPane.setFitToWidth(true);
-            
-            mainScene = new Scene(scrollPane); 
-            primaryStage.setScene(mainScene); 
-            primaryStage.setTitle("Sample JavaFX application"); 
-            primaryStage.show(); 
-    } 
-    catch (IOException e) { 
-            e.printStackTrace(); 
-        } 
-    } 
-
-
-    public static Scene getMainScene(){
-      return mainScene;
-    }
-
-  public static void main(String[] args) {
-    launch(args);
-  }
+	public static Scene getMainScene() {
+		return mainScene;
+	}
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
 }

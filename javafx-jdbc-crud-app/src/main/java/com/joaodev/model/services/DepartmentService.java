@@ -1,19 +1,22 @@
 package com.joaodev.model.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import com.joaodev.model.dao.DaoFactory;
+import com.joaodev.model.dao.DepartmentDao;
 import com.joaodev.model.entities.Department;
 
 public class DepartmentService {
+
+    private DepartmentDao dao = DaoFactory.createDepartmentDao();
     
     public List<Department> findAll(){
-        List<Department> list = new ArrayList<>();
+        return dao.findAll();
+    }
 
-        list.add(new Department(1, "Books"));
-        list.add(new Department(2, "Computers"));
-        list.add(new Department(3, "Eletronics"));
-        return list;
+    public void saveOrUpdate(Department entity) {
+    
+        throw new UnsupportedOperationException();
     }
 
 }

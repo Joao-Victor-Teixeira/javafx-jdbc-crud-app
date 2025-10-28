@@ -1,7 +1,10 @@
 package com.joaodev.gui.util;
 
+import java.util.Optional;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 
 public class Alerts {
 
@@ -12,4 +15,9 @@ public class Alerts {
 		alert.setContentText(content);
 		alert.show();
 	}
+
+    public static Optional<ButtonType> showConfirmation(String string, String string2) {
+    
+        throw new UnsupportedOperationException("");
+    }
 }
